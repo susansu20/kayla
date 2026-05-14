@@ -1,21 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
-import { setMuted, getBgm } from "@/lib/audio";
+import { setMuted } from "@/lib/audio";
 
 /**
  * Floating mute pill. Visible from Act 2 onward (once the curtain has opened).
  * Frosted glass with a gold border to match the palette.
+ * Defaults to unmuted — the curtain click is the user gesture that lets the
+ * audio engine start.
  */
 export default function AudioPlayer({ show }: { show: boolean }) {
   const [muted, setMutedState] = useState(false);
-
-  // Sync initial state with the Howl instance in case it loaded muted.
-  useEffect(() => {
-    const h = getBgm();
-    setMutedState(h.mute());
-  }, []);
 
   const toggle = () => {
     const next = !muted;

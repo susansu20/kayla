@@ -163,9 +163,6 @@ export default function WishesWall() {
         >
           <Plus className="h-4 w-4" /> Add a wish
         </button>
-        <p className="mx-auto mt-3 max-w-md px-6 text-[11px] uppercase tracking-[0.3em] text-ivory/40">
-          Demo only — wishes live in this session. Wire to a DB to persist.
-        </p>
       </div>
 
       <AnimatePresence>
